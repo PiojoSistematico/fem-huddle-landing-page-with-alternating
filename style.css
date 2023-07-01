@@ -1,0 +1,360 @@
+:root {
+  /* Colors */
+  --clr-primary-pink: hsl(322, 100%, 66%);
+  --clr-primary-pink-diluted: hsl(322, 100%, 80%);
+
+  --clr-neutral-very-pale-cyan: hsl(193, 100%, 96%);
+  --clr-neutral-very-dark-cyan: hsl(192, 100%, 9%);
+  --clr-neutral-grayish-blue: hsl(208, 11%, 55%);
+  --clr-neutral-grayish-blue-diluted: hsla(208, 11%, 90%);
+
+  /* Font Family */
+  --font-family-primary: "Poppins", sans-serif;
+  --font-family-secondary: "Open Sans", sans-serif;
+
+  /* Font Weight */
+  --font-weight-bold: 700;
+  --font-weight-medium: 600;
+  --font-weight-regular: 400;
+
+  /* Font Size */
+  --font-size-200: 0.75rem;
+  --font-size-300: 0.875rem;
+  --font-size-400: 1rem;
+  --font-size-500: 1.125rem;
+  --font-size-600: 1.25rem;
+  --font-size-700: 1.5rem;
+  --font-size-800: 1.875rem;
+  --font-size-900: 2.25rem;
+}
+
+/* Reset */
+/*  https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General styling */
+
+body {
+  background-color: white;
+  color: var(--clr-neutral-grayish-blue);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-300);
+}
+
+.hero-section {
+  background-color: var(--clr-neutral-very-pale-cyan);
+  background-image: url(bg-hero-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  object-fit: cover;
+  width: 100px;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+button {
+  border: none;
+}
+
+.btn-normal {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.2rem 1rem;
+  box-shadow: 0 0 0.5rem 0.1rem var(--clr-neutral-grayish-blue-diluted);
+  font-weight: var(--font-weight-bold);
+}
+
+.btn-normal:hover {
+  color: var(--clr-neutral-grayish-blue-diluted);
+}
+
+h1 {
+  color: var(--clr-neutral-very-dark-cyan);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-600);
+  padding: 2rem 4rem;
+}
+
+.btn-accent {
+  background-color: var(--clr-primary-pink);
+  color: white;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  margin: 2rem 0;
+  font-weight: var(--font-weight-bold);
+  width: 50%;
+}
+
+.btn-accent:hover {
+  background-color: var(--clr-primary-pink-diluted);
+  color: white;
+}
+
+.hero-section p {
+  color: var(--clr-neutral-very-dark-cyan);
+  padding: 1rem 2rem;
+}
+
+.mockup {
+  padding: 2rem;
+}
+
+.card-section {
+  margin: 4rem 1rem;
+  position: relative;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0.5rem 0.1rem var(--clr-neutral-grayish-blue-diluted);
+  margin: 2rem 0;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.card img {
+  padding: 1rem;
+}
+
+h2 {
+  color: var(--clr-neutral-very-dark-cyan);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-400);
+  margin: 1rem 0;
+}
+
+.overflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 0.5rem 0.1rem var(--clr-neutral-grayish-blue-diluted);
+  text-align: center;
+  border-radius: 1rem;
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -0%);
+  width: 100%;
+}
+
+.overflow * {
+  margin: 1rem 0;
+}
+
+footer {
+  padding-top: 8rem;
+  background-color: var(--clr-neutral-very-dark-cyan);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* https://htmlcolors.com/hsl-to-hex
+https://codepen.io/sosuke/pen/Pjoqqp
+ */
+footer .logo {
+  filter: invert(100%) sepia(4%) saturate(21%) hue-rotate(235deg)
+    brightness(106%) contrast(100%);
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  margin: 2rem 1rem;
+  gap: 0.5rem;
+}
+
+.links-section {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.links-section ul li {
+  list-style-type: none;
+  margin: 0.5rem 0;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+}
+
+.links:hover {
+  text-decoration: underline;
+}
+
+.last-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-section {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+/* As we are using filter to invert colors we have to use black instead of white for the border */
+.social-logo {
+  border: 0.1rem solid black;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  filter: invert(100%) sepia(4%) saturate(21%) hue-rotate(235deg)
+    brightness(106%) contrast(100%);
+}
+.social-logo:hover {
+  filter: invert(63%) sepia(40%) saturate(6991%) hue-rotate(294deg)
+    brightness(101%) contrast(101%);
+}
+.copyright {
+  align-self: center;
+}
+
+/* Media queries */
+@media (min-width: 50em) {
+  .reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 400px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mockup {
+    object-fit: cover;
+    height: 100%;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 80%;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  .card-reverse {
+    order: -1;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+  }
+  .links-section ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+  }
+  footer .logo {
+    object-fit: cover;
+    width: 330px;
+    height: 70px;
+  }
+  .overflow {
+    width: 50%;
+  }
+}
